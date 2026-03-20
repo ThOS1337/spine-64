@@ -1,0 +1,22 @@
+module code
+    fn global main
+    start
+        move r1 10
+        move r2 20
+        move r3 3.14
+        move r4 0xFF
+        move.4 ret "hello"
+        add r1 r2
+        cmp r1 > r2 go bigger
+        cmp r1 == r2 go equal
+        cmp r1 < r2 go smaller
+        bigger:
+        move ret 1
+        return
+        equal:
+        move ret 0
+        return
+        smaller:
+        move ret [r1 + 8]
+        return
+    end
