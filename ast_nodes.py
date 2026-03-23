@@ -7,6 +7,11 @@ class MoveNode:
     size: str = None
 
 @dataclass
+class AddNode:
+    dst: str
+    src: str
+
+@dataclass
 class SubNode:
     dst: str
     src: str
@@ -32,18 +37,6 @@ class SDivNode:
     src: str
 
 @dataclass
-class IncNode:
-    reg: str
-
-@dataclass
-class DecNode:
-    reg: str
-
-@dataclass
-class NegNode:
-    reg: str
-
-@dataclass
 class AwcNode:
     dst: str
     src: str
@@ -67,10 +60,6 @@ class OrNode:
 class XorNode:
     dst: str
     src: str
-
-@dataclass
-class NotNode:
-    reg: str
 
 @dataclass
 class ShlNode:
@@ -108,6 +97,72 @@ class RacrNode:
     src: str
 
 @dataclass
+class LmaNode:
+    dst: str
+    src: str
+
+@dataclass
+class SwapNode:
+    dst: str
+    src: str
+
+@dataclass
+class MoveSxNode:
+    dst: str
+    src: str
+
+@dataclass
+class MoveZxNode:
+    dst: str
+    src: str
+
+@dataclass
+class FaddNode:
+    dst: str
+    src: str
+
+@dataclass
+class FsubNode:
+    dst: str
+    src: str
+
+@dataclass
+class FmulNode:
+    dst: str
+    src: str
+
+@dataclass
+class FdivNode:
+    dst: str
+    src: str
+
+@dataclass
+class FmoveNode:
+    dst: str
+    src: str
+
+@dataclass
+class FcmpNode:
+    dst: str
+    src: str
+
+@dataclass
+class IncNode:
+    reg: str
+
+@dataclass
+class DecNode:
+    reg: str
+
+@dataclass
+class NegNode:
+    reg: str
+
+@dataclass
+class NotNode:
+    reg: str
+
+@dataclass
 class CmpNode:
     left: str
     op: str
@@ -140,31 +195,10 @@ class PopNode:
     reg: str
 
 @dataclass
-class LmaNode:
-    dst: str
-    src: str
-
-@dataclass
-class SwapNode:
-    a: str
-    b: str
-
-@dataclass
-class MoveSxNode:
-    dst: str
-    src: str
-
-@dataclass
-class MoveZxNode:
-    dst: str
-    src: str
-
-@dataclass
 class FnNode:
     name: str
     body: list
-    global_: bool = False
-    raw: bool = False
+    fn_type: str
 
 @dataclass
 class ExternNode:
@@ -201,7 +235,7 @@ class SyscallNode:
     pass
 
 @dataclass
-class NopNode:
+class NopeNode:
     pass
 
 @dataclass
@@ -250,31 +284,6 @@ class DataDefNode:
     size: str = None
 
 @dataclass
-class FaddNode:
-    dst: str
-    src: str
-
-@dataclass
-class FsubNode:
-    dst: str
-    src: str
-
-@dataclass
-class FmulNode:
-    dst: str
-    src: str
-
-@dataclass
-class FdivNode:
-    dst: str
-    src: str
-
-@dataclass
-class FmoveNode:
-    dst: str
-    src: str
-
-@dataclass
-class FcmpNode:
-    a: str
-    b: str
+class AliasNode:
+    reg: str
+    name: str
